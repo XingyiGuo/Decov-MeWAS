@@ -4,7 +4,7 @@
 This project provides a deconvolution-based framework for identifying cell-type-specific epigenetic and transcriptional mechanisms underlying colorectal cancer (CRC) susceptibility. By integrating bulk colon DNA methylation and transcriptomic datasets with single-cell reference profiles, the pipeline infers cell-type-specific molecular traits and links them to CRC genetic risk through cell-type-specific methylation-wide association studies (ctMWAS) and transcriptome-wide association studies (ctTWAS).
 Using normal colon methylation (n = 293) and gene expression (n = 707) datasets together with CRC GWAS summary statistics (78,473 cases and 107,143 controls), the framework prioritizes risk-associated CpG sites, genes, and regulatory pathways at cellular resolution. Integrative analyses combining ctMWAS, ctTWAS, colocalization, and methylation–gene mapping identified high-confidence CRC susceptibility loci, candidate causal genes, and potential therapeutic targets.
 
-![My Image](./Figures/ctMWAS_ctTWAS.png)
+![ctMWAS and ctTWAS workflow](./Figures/ctMWAS_ctTWAS.png)
 
 **Step1:** Cell-type-specific deconvolution of bulk DNA methylation and gene expression data
 
