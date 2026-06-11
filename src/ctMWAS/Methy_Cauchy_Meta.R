@@ -8,10 +8,10 @@ cts <- c("Enteriendocrine", "Enterocyte","Goblet","Progenitor")
 ct <- cts[as.numeric(args[1])]
 print(ct)
 
-x1_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Meth_UVA/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,".TWAS.csv")
-x2_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Meth_GTEx/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,".TWAS.csv")
-sum1_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Meth_UVA/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,"_model_summaries.csv")
-sum2_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Meth_GTEx/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,"_model_summaries.csv")
+x1_filename=paste0("/MethExp/Meth_UVA/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,".TWAS.csv")
+x2_filename=paste0("/MethExp/Meth_GTEx/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,".TWAS.csv")
+sum1_filename=paste0("/MethExp/Meth_UVA/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,"_model_summaries.csv")
+sum2_filename=paste0("/MethExp/Meth_GTEx/Methy_CellTypes/TFTWAS_RES_add_corr/",ct,"_model_summaries.csv")
 
 x1_df_raw=as.data.frame(fread(x1_filename))
 x2_df_raw=as.data.frame(fread(x2_filename))
@@ -44,4 +44,4 @@ x1_x2_df <- x1_x2_df %>%
                 ACAT(c(pvalue_UVA, pvalue_GTEx))))
   )
 
-fwrite(x1_x2_df, paste0("/data/l2_bioinfo1/liq17/MethExp/Manuscript_Tables_Figures/Methy_Cauchy/CRC_EUR_GTEX_Methylation_META_",ct,".csv"))
+fwrite(x1_x2_df, paste0("/MethExp/Manuscript_Tables_Figures/Methy_Cauchy/CRC_EUR_GTEX_Methylation_META_",ct,".csv"))

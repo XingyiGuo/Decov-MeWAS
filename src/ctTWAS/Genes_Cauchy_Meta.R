@@ -8,11 +8,11 @@ ts="colontrans"
 CTlist=c("ABS","CT","EE","GOB","STM", "TAC","TUF")
 CT=CTlist[as.numeric(args[1])]
 
-x1_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Expr_CRC_EUR/hires54k_crc_eur_genes10k_SingleCellCount_bulkCPM/TFTWAS_RES_add_corr/CRC_EUR_",CT,".TWAS")
-x2_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Expr_GTEx_SC_Bulk/hires54k_gtex_colontrans_genes10k_SingleCellCount_BulkCPM/TFTWAS_RES_add_corr/GTEX_colontrans_",CT,".TWAS")
+x1_filename=paste0("/MethExp/Expr_CRC_EUR/hires54k_crc_eur_genes10k_SingleCellCount_bulkCPM/TFTWAS_RES_add_corr/CRC_EUR_",CT,".TWAS")
+x2_filename=paste0("/MethExp/Expr_GTEx_SC_Bulk/hires54k_gtex_colontrans_genes10k_SingleCellCount_BulkCPM/TFTWAS_RES_add_corr/GTEX_colontrans_",CT,".TWAS")
 #x3_filename=paste0("/data/sbcs/GuoLab/backup/liq17/MethExp/Expr_CRC_ASIAN/hires54k_crc_asian_genes10k_SingleCellCount_BulkCPM/TFTWAS_RES/CRC_ASIAN_",CT,".TWAS")
-sum1_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Expr_CRC_EUR/hires54k_crc_eur_genes10k_SingleCellCount_bulkCPM/TFTWAS_RES_add_corr/CRC_EUR_",CT,"_model_summaries.csv")
-sum2_filename=paste0("/data/l2_bioinfo1/liq17/MethExp/Expr_GTEx_SC_Bulk/hires54k_gtex_colontrans_genes10k_SingleCellCount_BulkCPM/TFTWAS_RES_add_corr/GTEX_colontrans_",CT,"_model_summaries.csv")
+sum1_filename=paste0("/MethExp/Expr_CRC_EUR/hires54k_crc_eur_genes10k_SingleCellCount_bulkCPM/TFTWAS_RES_add_corr/CRC_EUR_",CT,"_model_summaries.csv")
+sum2_filename=paste0("/MethExp/Expr_GTEx_SC_Bulk/hires54k_gtex_colontrans_genes10k_SingleCellCount_BulkCPM/TFTWAS_RES_add_corr/GTEX_colontrans_",CT,"_model_summaries.csv")
 
 x1_df_raw=as.data.frame(fread(x1_filename))
 x2_df_raw=as.data.frame(fread(x2_filename))
@@ -58,4 +58,4 @@ x1_x2_df <- x1_x2_df %>%
                                     # ACAT(c(pvalue_ASIAN, META_EUR_P))))
   # )
 
-fwrite(x1_x2_df, paste0("/data/l2_bioinfo1/liq17/MethExp/Manuscript_Tables_Figures/Expr_Cauchy/CRC_EUR_ASIAN_GTEX_CountCPM_META_",CT,".csv"))
+fwrite(x1_x2_df, paste0("/MethExp/Manuscript_Tables_Figures/Expr_Cauchy/CRC_EUR_ASIAN_GTEX_CountCPM_META_",CT,".csv"))

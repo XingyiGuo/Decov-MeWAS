@@ -54,7 +54,7 @@ dbs_lib <- c("Reactome_Pathways_2024",
 #### ctMWAS results EnrichR#####
 ################################
 
-wk="D:/GitHub/XingyiGuo/Decov-MeWAS/data/"
+wk="/Decov-MeWAS/data/"
 
 genes_df <- read_excel(paste0(wk, "Supplementary_Tables.xlsx"), sheet="S6", skip=2)
 genes_df <- genes_df[genes_df$'Regression results'!="", ]
@@ -134,7 +134,7 @@ p <- ggplot(enrich_df, aes(x = GeneRatio, y = Term)) +
   theme_bw() +
   theme(axis.text.y = element_text(size = 8))
 
-ggsave("D:/PostDoc/Projects/CRC_scTWAS/ms_figures_tables/Figures/figures_before_merge/enrich_bubble_NL.pdf", plot = p, width = 8, height = 12)
+ggsave("/ms_figures_tables/Figures/figures_before_merge/enrich_bubble_NL.pdf", plot = p, width = 8, height = 12)
 
 
 

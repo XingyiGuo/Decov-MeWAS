@@ -5,7 +5,7 @@ library("stringr")
 library("data.table")
 library("dplyr")
 library("readxl")
-setwd("/data/sbcs/GuoLab/backup/liq17/MethExp/Expr_Methy_sigCPGs_lm/202603")
+setwd("/MethExp/Expr_Methy_sigCPGs_lm/202603")
 args <- commandArgs(trailingOnly = TRUE)
 
 set.seed(202603)
@@ -21,16 +21,16 @@ run_mode <- ifelse(length(args) > 0, args[1], stop("Provide chromosome number or
 
 ###### II. Input files ######
 sigCPGs_df <- as.data.frame(read.csv(
-  "/data/sbcs/GuoLab/backup/liq17/MethExp/Manuscript_Tables_Figures/Methy_Cauchy/CRC_EUR_GTEX_Methylation_META_4cts_updateGenes_reportCPGs_GWASLoci.csv"))
+  "/MethExp/Manuscript_Tables_Figures/Methy_Cauchy/CRC_EUR_GTEX_Methylation_META_4cts_updateGenes_reportCPGs_GWASLoci.csv"))
 
 CPGs_beta <- as.data.frame(fread(
-  "/data/sbcs/GuoLab/backup/liq17/MethExp/Meth_GTEx/Methy_bulk/GSE213478_methylation_DNAm_noob_final_BMIQ_colon_224_BETA.qn.afterpeer.ivn.hg38.csv"))
+  "/MethExp/Meth_GTEx/Methy_bulk/GSE213478_methylation_DNAm_noob_final_BMIQ_colon_224_BETA.qn.afterpeer.ivn.hg38.csv"))
 sigCPGs_beta <- CPGs_beta[CPGs_beta$cpG %in% sigCPGs_df$cpg, ]
 rownames(sigCPGs_beta) <- NULL
 
 # Gene expression: samples as rows, genes as columns (E x N transposed)
 expr_df <- as.data.frame(fread(
-  "/data/sbcs/GuoLab/backup/RNA-seq/GTEx_CRC_RNA-seq/processed/expr_as_apa/GTEx_Colon_Transverse_expression.txt_QN_inverse_PEER_inverse_02092023.csv"))
+  "/RNA-seq/GTEx_CRC_RNA-seq/processed/expr_as_apa/GTEx_Colon_Transverse_expression.txt_QN_inverse_PEER_inverse_02092023.csv"))
 rownames(expr_df)    <- expr_df$V1
 expr_df$V1           <- NULL
 expr_df_ExN          <- t(expr_df)
@@ -45,7 +45,7 @@ sigCPGs_beta_ordered <- sigCPGs_beta[, common_samples_ordered, drop = FALSE]
 sigCPGs_beta_ordered <- cbind(sigCPGs_beta[, 1:3], sigCPGs_beta_ordered)
 expr_df_ExN_ordered  <- expr_df_ExN[, common_samples_ordered, drop = FALSE]
 
-gene_annot_file <- "/data/sbcs/GuoLab/backup/liq17/ref/gencode/gencode.v26.annotation.gtf"
+gene_annot_file <- "/ref/gencode/gencode.v26.annotation.gtf"
 
 ###### III. Helper functions ######
 get_gene_annotation <- function(gene_annot_file, chrom, bp, flank) {
