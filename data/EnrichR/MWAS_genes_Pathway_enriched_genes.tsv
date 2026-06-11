@@ -1,0 +1,3 @@
+Term	Overlap	P.value	Adjusted.P.value	Old.P.value	Old.Adjusted.P.value	Odds.Ratio	Combined.Score	Genes	Source
+Positive Regulation of miRNA Metabolic Process (GO:2000630)	4/53	8.31191889201398e-05	0.0486247255182818	0	0	19.5367592820261	183.552443990544	SMAD3;ZC3H12A;PDGFB;GNL3	GO_Biological_Process_2025
+Platelet-Derived Growth Factor Binding (GO:0048407)	2/10	0.000822873909239821	0.0905161300163803	0	0	58.5441176470588	415.821748042986	COL4A1;PDGFB	GO_Molecular_Function_2025
